@@ -4,43 +4,80 @@ import { legalData } from '../data/legal';
 ---
 
 <BaseLayout
-  title="Datenschutz"
-  description="Datenschutzhinweise der Novax Digital GmbH als prüfpflichtiger Platzhalter."
+  title="Datenschutzerklärung"
+  description="Datenschutzerklärung der Novax Digital GmbH für die statische Astro-Website ohne Tracking und ohne Kontaktformular."
 >
-  <section class="page-hero section page-hero--compact" aria-labelledby="privacy-title">
+  <section class="page-hero section page-hero--compact legal-hero" aria-labelledby="privacy-title">
     <div data-reveal>
       <p class="eyebrow">Rechtliches</p>
-      <h1 id="privacy-title">Datenschutz</h1>
-      <p>Pruefpflichtiger Platzhalter fuer die finale Datenschutzerklaerung der Novax Digital GmbH.</p>
+      <h1 id="privacy-title">Datenschutzerklärung</h1>
+      <p>Transparent, kurz und passend zum aktuellen Website-Stack.</p>
     </div>
   </section>
 
-  <section class="section legal-content" data-reveal>
-    <h2>Wichtiger Hinweis</h2>
-    <p>
-      Diese Seite ist ein sauberer Platzhalter. Der finale Datenschutztext muss vor dem Livegang durch eine juristisch qualifizierte
-      Stelle erstellt oder geprueft werden.
-    </p>
+  <section class="section legal-content legal-content--centered" data-reveal>
+    <p class="legal-content__date">Stand: 24. Juni 2026</p>
 
-    <h2>Verantwortliche Stelle</h2>
+    <h2>Verantwortlicher</h2>
     <p>
       {legalData.company}<br />
       {legalData.address.street}<br />
       {legalData.address.postalCode} {legalData.address.city}<br />
+      {legalData.phone && <>Telefon: <a href={`tel:${legalData.phone.replace(/\D/g, '')}`}>{legalData.phone}</a><br /></>}
       E-Mail: <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
     </p>
 
-    <h2>Kontaktformular</h2>
+    <h2>Aufruf der Website</h2>
     <p>
-      Das Kontaktformular ist aktuell noch nicht an einen Versanddienst oder API-Endpunkt angebunden. Sobald ein Dienst verbunden wird,
-      muessen Art, Zweck, Rechtsgrundlage, Speicherdauer, Empfaenger und Betroffenenrechte in der finalen Datenschutzerklaerung konkret
-      beschrieben werden.
+      Diese Website wird als statische Astro-Seite ausgeliefert. Beim Aufruf verarbeitet der Webserver technisch notwendige Zugriffsdaten,
+      zum Beispiel IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene URL, Referrer, Browser- und Betriebssysteminformationen.
+      Die Verarbeitung dient der sicheren Auslieferung, Stabilität und Fehleranalyse der Website.
+    </p>
+    <p>
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im sicheren und zuverlässigen Betrieb dieser
+      Website. Server-Logfiles werden nur so lange gespeichert, wie es für Betrieb, Sicherheit und Nachvollziehbarkeit erforderlich ist.
     </p>
 
-    <h2>Keine Tracking-Skripte</h2>
+    <h2>Kontakt per E-Mail oder Telefon</h2>
     <p>
-      In der aktuellen Umsetzung werden keine externen Tracking-Skripte eingebunden. Falls spaeter Analyse-, Marketing- oder
-      Drittanbieter-Dienste genutzt werden, muessen diese rechtlich bewertet und transparent aufgefuehrt werden.
+      Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten zur Bearbeitung der Anfrage
+      und zur weiteren Kommunikation. Je nach Inhalt der Anfrage erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO
+      oder Art. 6 Abs. 1 lit. f DSGVO.
+    </p>
+
+    <h2>Keine Formulare, keine Analyse, keine Cookies</h2>
+    <p>
+      Auf dieser Website ist kein Kontaktformular eingebunden. Es werden keine Analytics- oder Marketingdienste eingesetzt, keine
+      externen Schriftarten geladen und keine nicht notwendigen Cookies gesetzt. Die sichtbaren Bilder, Logos und Hero-Videos werden
+      lokal aus dem Website-Projekt ausgeliefert.
+    </p>
+    <p>
+      Die lokalen JavaScript-Funktionen dienen ausschließlich der Navigation, einfachen Scroll-Animationen und Weiterleitungen von
+      früheren Unterseiten auf die passenden Abschnitte des One-Pagers. Sie speichern keine personenbezogenen Daten im Browser.
+    </p>
+
+    <h2>Externe Links</h2>
+    <p>
+      Die Projektkarten und einzelne Footer-Links führen zu externen Websites. Beim Anklicken verlassen Sie diese Website. Für die
+      Datenverarbeitung auf den verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.
+    </p>
+
+    <h2>Ihre Rechte</h2>
+    <p>
+      Sie haben nach Maßgabe der DSGVO insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+      Datenübertragbarkeit und Widerspruch gegen bestimmte Verarbeitungen. Wenn eine Verarbeitung auf Einwilligung beruht, können Sie
+      diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
+    </p>
+
+    <h2>Beschwerderecht</h2>
+    <p>
+      Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Für Niedersachsen ist dies der Landesbeauftragte
+      für den Datenschutz Niedersachsen. Sie können sich außerdem jederzeit direkt an uns wenden.
+    </p>
+
+    <h2>Automatisierte Entscheidungen</h2>
+    <p>
+      Eine automatisierte Entscheidungsfindung einschließlich Profiling findet auf dieser Website nicht statt.
     </p>
   </section>
 </BaseLayout>

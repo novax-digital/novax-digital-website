@@ -25,5 +25,5 @@ Die Kontaktmoeglichkeiten werden direkt ueber Telefonnummer und E-Mail-Adresse a
 
 ## Offene Inhalte
 
-- Finale Datenschutzerklaerung juristisch erstellen oder pruefen.
+- Datenschutzerklaerung vor Livegang juristisch final pruefen.
 - Maklernull ggf. mit finalem Logo und Link als weiteres oder alternatives Projekt ergaenzen.

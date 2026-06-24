@@ -7,15 +7,15 @@ import { legalData } from '../data/legal';
   title="Impressum"
   description="Impressum der Novax Digital GmbH mit Angaben nach deutschem Recht."
 >
-  <section class="page-hero section page-hero--compact" aria-labelledby="imprint-title">
+  <section class="page-hero section page-hero--compact legal-hero" aria-labelledby="imprint-title">
     <div data-reveal>
       <p class="eyebrow">Rechtliches</p>
       <h1 id="imprint-title">Impressum</h1>
-      <p>Angaben gemaess rechtlichen Informationspflichten. Die finalen Unternehmensdaten muessen vor Livegang geprueft werden.</p>
+      <p>Angaben nach § 5 DDG.</p>
     </div>
   </section>
 
-  <section class="section legal-content" data-reveal>
+  <section class="section legal-content legal-content--centered" data-reveal>
     <h2>Angaben zum Unternehmen</h2>
     <p>
       <strong>{legalData.company}</strong><br />
@@ -30,7 +30,7 @@ import { legalData } from '../data/legal';
     <p>
       {legalData.phone && (
         <>
-          Telefon: <a href={`tel:${legalData.phone.replaceAll(' ', '')}`}>{legalData.phone}</a><br />
+          Telefon: <a href={`tel:${legalData.phone.replace(/\D/g, '')}`}>{legalData.phone}</a><br />
         </>
       )}
       E-Mail: <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
@@ -44,11 +44,5 @@ import { legalData } from '../data/legal';
 
     <h2>Umsatzsteuer-ID</h2>
     <p>Umsatzsteuer-Identifikationsnummer gemaess § 27a Umsatzsteuergesetz: {legalData.vatId}</p>
-
-    <h2>Hinweis zur Datenprüfung</h2>
-    <p>
-      Dieses Impressum basiert auf aktuell vorliegenden Angaben und muss vor Veroeffentlichung juristisch und geschaeftlich final
-      geprueft werden, insbesondere Adresse und zentrale Kontaktadresse. Eine zentrale Telefonnummer ist derzeit nicht hinterlegt.
-    </p>
   </section>
 </BaseLayout>
