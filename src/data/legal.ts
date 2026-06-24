@@ -20,15 +20,13 @@ export const legalData: LegalData = {
   registerCourt: 'Amtsgericht Hannover',
   registerNumber: 'HRB 220589',
   vatId: 'DE335613731',
-  // TODO: Finale Impressumsadresse juristisch/geschaeftlich pruefen.
   address: {
     street: 'Schierholzstr. 27',
     postalCode: '30655',
     city: 'Hannover',
   },
-  // TODO: Finale zentrale Novax-Telefonnummer ergaenzen, falls vorhanden.
-  phone: null,
-  email: 'info@novax-digital.de', // TODO: Finale zentrale Novax-E-Mail pruefen.
+  phone: '0511-9012188-1',
+  email: 'hello@novax-digital.de',
   domain: 'https://novax-digital.de',
 };
 

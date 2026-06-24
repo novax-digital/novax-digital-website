@@ -1,122 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import ValueCard from '../components/ValueCard.astro';
-
-const dna = [
-  {
-    title: 'Strategie',
-    text: 'Wir uebersetzen Ideen in Positionierung, klare Roadmaps und sinnvolle Prioritaeten.',
-  },
-  {
-    title: 'Design',
-    text: 'Interfaces, Markenauftritt und Nutzerfuehrung werden so gestaltet, dass Vertrauen und Handlung zusammenfinden.',
-  },
-  {
-    title: 'Entwicklung',
-    text: 'Wir bauen Websites, Portale und Tools performant, wartbar und passend zum spaeteren Betrieb.',
-  },
-  {
-    title: 'Marketing',
-    text: 'Sichtbarkeit, Content und Conversion werden nicht angehaengt, sondern als Teil des Produkts gedacht.',
-  },
-  {
-    title: 'Automatisierung',
-    text: 'Prozesse, Formulare, Datenfluesse und Schnittstellen machen digitale Angebote im Alltag effizienter.',
-  },
-];
+const target = '/#ueber-uns';
 ---
 
-<BaseLayout
-  title="Über uns"
-  description="Novax Digital ist eine digitale Unternehmensgruppe und ein Digital Builder aus Hannover/Niedersachsen."
->
-  <section class="page-hero page-hero--media section" aria-labelledby="about-page-title">
-    <div data-reveal>
-      <p class="eyebrow">Novax Digital GmbH</p>
-      <h1 id="about-page-title">Wir leben digital.</h1>
-      <p>
-        Novax Digital ist digitale Unternehmensgruppe, Produktstudio und Umsetzungspartner fuer digitale Projekte, die technisch
-        sauber gebaut und langfristig betrieben werden sollen.
-      </p>
-    </div>
-    <figure class="page-hero__image" data-reveal>
-      <img
-        src="/assets/optimized/team-founders-1600.jpg"
-        alt="Philipp Polley und Christoph Pfad von Novax Digital"
-        width="1600"
-        height="1066"
-        decoding="async"
-      />
-    </figure>
-  </section>
-
-  <section class="section split-section" aria-labelledby="builder-title">
-    <div data-reveal>
-      <p class="eyebrow">Digital Builder</p>
-      <h2 id="builder-title">Wir bauen eigene Projekte und Loesungen fuer echte Maerkte.</h2>
-    </div>
-    <div class="split-section__content" data-reveal>
-      <p>
-        Novax Digital entwickelt und betreibt eigene Marken, Plattformen und Tools. Gleichzeitig entsteht aus diesem Praxiswissen
-        Umsetzungskraft fuer Unternehmen, die digitale Produkte, Portale, Websites oder Wachstumssysteme aufbauen wollen.
-      </p>
-      <p>
-        Das Team verbindet technische Entwicklung, Designverstaendnis, Prozessdenken und Online-Marketing. So entstehen digitale
-        Angebote, die nicht nur praesentiert werden, sondern funktionieren, gefunden und weiterentwickelt werden koennen.
-      </p>
-    </div>
-  </section>
-
-  <section class="section image-story" aria-label="Einblick in die Arbeit von Novax Digital">
-    <figure class="image-story__wide" data-reveal>
-      <img
-        src="/assets/optimized/team-workspace-1800.jpg"
-        alt="Novax Digital Team im Büro an einem Arbeitsplatz"
-        width="1800"
-        height="1199"
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
-    <figure class="image-story__portrait" data-reveal>
-      <img
-        src="/assets/optimized/team-portrait-1200.jpg"
-        alt="Philipp Polley und Christoph Pfad im Novax Digital Büro"
-        width="800"
-        height="1200"
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
-  </section>
-
-  <section class="section section--band" aria-labelledby="dna-title">
-    <SectionHeader
-      eyebrow="Unsere DNA"
-      title="Fuenf Disziplinen, die bei jedem digitalen Projekt zusammenspielen."
-      text="Wir betrachten digitale Vorhaben als System: Markt, Produkt, Technik, Marke und Wachstum muessen miteinander arbeiten."
-    />
-    <div class="pillar-grid pillar-grid--five">
-      {dna.map((item) => <ValueCard title={item.title} text={item.text} />)}
-    </div>
-  </section>
-
-  <section class="section split-section" aria-labelledby="own-projects-title">
-    <div data-reveal>
-      <p class="eyebrow">Warum eigene Projekte?</p>
-      <h2 id="own-projects-title">Weil digitale Erfahrung am staerksten wird, wenn man selbst betreibt.</h2>
-    </div>
-    <div class="split-section__content" data-reveal>
-      <p>
-        Eigene Projekte sorgen dafuer, dass unser Team nicht nur theoretisch beraet, sondern selbst Plattformen, Portale und Tools
-        baut, betreibt, optimiert und skaliert.
-      </p>
-      <p>
-        Diese Naehe zum Betrieb schaerft Entscheidungen: Welche Funktionen lohnen sich wirklich? Wo entsteht Reibung? Welche
-        Vermarktung fuehrt zu passenden Nutzern oder Anfragen? Genau dieses Denken fliesst in jedes neue Vorhaben ein.
-      </p>
-      <a class="button button--primary" href="/kontakt/">Projekt mit uns besprechen</a>
-    </div>
-  </section>
-</BaseLayout>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href="https://novax-digital.de/" />
+    <title>Über uns | Novax Digital</title>
+  </head>
+  <body>
+    <script is:inline>
+      window.location.replace('/#ueber-uns');
+    </script>
+    <p><a href={target}>Weiter zu Über uns</a></p>
+  </body>
+</html>

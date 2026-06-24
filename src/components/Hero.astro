@@ -1,53 +1,20 @@
----
-import { projects } from '../data/projects';
+<section class="hero" aria-labelledby="hero-title">
+  <video class="hero__video" autoplay muted loop playsinline poster="/assets/hero/hero-poster.webp" aria-hidden="true">
+    <source src="/assets/hero/hero-av1.mp4" type='video/mp4; codecs="av01.0.08M.08"' />
+    <source src="/assets/hero/hero.webm" type="video/webm" />
+    <source src="/assets/hero/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero__shade" aria-hidden="true"></div>
 
-const visualLabels: Record<string, { category: string; title: string }> = {
-  'erfolg-buddies': { category: 'Digitalagentur', title: 'Erfolg Buddies' },
-  'deutsche-pflegeentwicklung': { category: 'Pflege / Portal', title: 'DPE' },
-  'schulung-immobilienmakler': { category: 'E-Learning', title: 'Schulung Portal' },
-  passflow: { category: 'Security SaaS', title: 'Passflow' },
-};
-
-const visualProjects = projects.map((project) => ({
-  project,
-  visual: visualLabels[project.slug] ?? { category: project.category, title: project.title },
-}));
----
-
-<section class="hero section" aria-labelledby="hero-title">
-  <div class="hero__content" data-reveal>
-    <p class="eyebrow">Digital Venture Studio aus Hannover</p>
-    <h1 id="hero-title">Digitale Produkte, Portale und Marken, die Märkte bewegen.</h1>
-    <p class="hero__lead">
-      Novax Digital entwickelt Websites, Plattformen, Schulungsportale, SaaS-Tools und digitale Wachstumssysteme - von der Idee
-      ueber die technische Umsetzung bis zur Vermarktung.
-    </p>
-    <div class="hero__actions" aria-label="Primaere Aktionen">
-      <a class="button button--primary" href="#projekte">Projekte entdecken</a>
-      <a class="button button--ghost" href="/kontakt/">Kontakt aufnehmen</a>
-    </div>
+  <div class="hero__center" data-reveal>
+    <p class="eyebrow">Digital Venture Studio</p>
+    <h1 id="hero-title" class="sr-only">Novax Digital</h1>
+    <img class="hero__mark" src="/assets/logos/novax-digital-logo.png" alt="Novax Digital" width="3000" height="331" decoding="async" />
+    <p class="hero__subtitle">Build. Launch. Scale.</p>
   </div>
 
-  <div class="hero-visual" aria-label="Projekt-Oekosystem Novax Digital" data-reveal>
-    <div class="hero-visual__grid" aria-hidden="true"></div>
-    <div class="orbit orbit--one" aria-hidden="true"></div>
-    <div class="orbit orbit--two" aria-hidden="true"></div>
-    <div class="network-card network-card--core">
-      <span>Core</span>
-      <strong>Novax Digital</strong>
-      <small>Build, launch, scale</small>
-    </div>
-    {visualProjects.map(({ project, visual }, index) => (
-      <a
-        class:list={['network-card', 'network-card--project', `network-card--${project.accent}`, `network-card--pos-${index + 1}`]}
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${project.title} extern ansehen`}
-      >
-        <span>{visual.category}</span>
-        <strong>{visual.title}</strong>
-      </a>
-    ))}
-  </div>
+  <a class="hero__scroll" href="#projekte" aria-label="Zu den Projekten scrollen">
+    <span>Scrollen</span>
+    <i aria-hidden="true"></i>
+  </a>
 </section>

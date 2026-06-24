@@ -5,10 +5,11 @@ import { legalData } from '../data/legal';
 const navItems = [
   { label: 'Startseite', href: '/' },
   { label: 'Projekte', href: '/#projekte' },
-  { label: 'Kompetenzen', href: '/#kompetenzen' },
-  { label: 'Über uns', href: '/ueber-uns/' },
-  { label: 'Kontakt', href: '/kontakt/' },
+  { label: 'Über uns', href: '/#ueber-uns' },
+  { label: 'Kontakt', href: '/#kontakt' },
 ];
+
+const phoneHref = legalData.phone ? `tel:${legalData.phone.replace(/\D/g, '')}` : null;
 ---
 
 <footer class="site-footer">
@@ -21,6 +22,7 @@ const navItems = [
         Digitale Unternehmensgruppe fuer Websites, Plattformen, Schulungsportale, SaaS-Tools und Wachstumssysteme.
       </p>
       <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
+      {legalData.phone && phoneHref && <a href={phoneHref}>{legalData.phone}</a>}
     </div>
 
     <nav aria-label="Footer Navigation">

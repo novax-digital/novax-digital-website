@@ -1,9 +1,8 @@
 ---
 const navItems = [
   { label: 'Projekte', href: '/#projekte' },
-  { label: 'Kompetenzen', href: '/#kompetenzen' },
-  { label: 'Über uns', href: '/ueber-uns/' },
-  { label: 'Kontakt', href: '/kontakt/' },
+  { label: 'Über uns', href: '/#ueber-uns' },
+  { label: 'Kontakt', href: '/#kontakt' },
 ];
 ---
 
@@ -23,7 +22,7 @@ const navItems = [
 
     <nav class="site-nav" id="primary-navigation" aria-label="Hauptnavigation" data-site-nav>
       {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-      <a class="button button--small button--primary" href="/kontakt/">Projekt anfragen</a>
+      <a class="button button--small button--primary" href="/#kontakt">Anfragen</a>
     </nav>
   </div>
 </header>

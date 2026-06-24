@@ -1,65 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/ContactForm.astro';
-import { legalData } from '../data/legal';
+const target = '/#kontakt';
 ---
 
-<BaseLayout
-  title="Kontakt"
-  description="Kontakt zur Novax Digital GmbH fuer Websites, Portale, SaaS-Tools, Schulungsplattformen und digitale Wachstumssysteme."
->
-  <section class="page-hero section" aria-labelledby="contact-title">
-    <div data-reveal>
-      <p class="eyebrow">Kontakt</p>
-      <h1 id="contact-title">Lass uns dein digitales Vorhaben sortieren.</h1>
-      <p>
-        Ob neues Portal, Relaunch, SaaS-Idee oder Wachstumssystem: Schick uns die wichtigsten Eckdaten, dann klaeren wir den sinnvollsten
-        naechsten Schritt.
-      </p>
-    </div>
-  </section>
-
-  <section class="section contact-layout" aria-labelledby="contact-form-title">
-    <aside class="contact-panel" data-reveal>
-      <figure class="contact-panel__image">
-        <img
-          src="/assets/optimized/contact-portrait-1200.jpg"
-          alt="Ansprechpartner der Novax Digital GmbH"
-          width="1200"
-          height="800"
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
-      <p class="eyebrow">Direkte Wege</p>
-      <h2>Kontaktinformationen</h2>
-      <div class="contact-list">
-        <a href={`mailto:${legalData.email}`}>
-          <span>E-Mail</span>
-          <strong>{legalData.email}</strong>
-        </a>
-        {legalData.phone && (
-          <a href={`tel:${legalData.phone.replaceAll(' ', '')}`}>
-            <span>Telefon</span>
-            <strong>{legalData.phone}</strong>
-          </a>
-        )}
-        <div>
-          <span>Standort</span>
-          <strong>{legalData.address.postalCode} {legalData.address.city}</strong>
-        </div>
-      </div>
-      <p class="contact-panel__note">
-        Hinweis: E-Mail ist eine zentrale TODO-Angabe und muss vor dem Livegang final geprueft werden.
-      </p>
-    </aside>
-
-    <div class="form-panel" data-reveal>
-      <div class="form-panel__header">
-        <p class="eyebrow">Projekt anfragen</p>
-        <h2 id="contact-form-title">Sag uns, worum es geht.</h2>
-      </div>
-      <ContactForm />
-    </div>
-  </section>
-</BaseLayout>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href="https://novax-digital.de/" />
+    <title>Kontakt | Novax Digital</title>
+  </head>
+  <body>
+    <script is:inline>
+      window.location.replace('/#kontakt');
+    </script>
+    <p><a href={target}>Weiter zum Kontakt</a></p>
+  </body>
+</html>
