@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { legalData } from '../data/legal';
+---
+
+<BaseLayout
+  title="Datenschutz"
+  description="Datenschutzhinweise der Novax Digital GmbH als prüfpflichtiger Platzhalter."
+>
+  <section class="page-hero section page-hero--compact" aria-labelledby="privacy-title">
+    <div data-reveal>
+      <p class="eyebrow">Rechtliches</p>
+      <h1 id="privacy-title">Datenschutz</h1>
+      <p>Pruefpflichtiger Platzhalter fuer die finale Datenschutzerklaerung der Novax Digital GmbH.</p>
+    </div>
+  </section>
+
+  <section class="section legal-content" data-reveal>
+    <h2>Wichtiger Hinweis</h2>
+    <p>
+      Diese Seite ist ein sauberer Platzhalter. Der finale Datenschutztext muss vor dem Livegang durch eine juristisch qualifizierte
+      Stelle erstellt oder geprueft werden.
+    </p>
+
+    <h2>Verantwortliche Stelle</h2>
+    <p>
+      {legalData.company}<br />
+      {legalData.address.street}<br />
+      {legalData.address.postalCode} {legalData.address.city}<br />
+      E-Mail: <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
+    </p>
+
+    <h2>Kontaktformular</h2>
+    <p>
+      Das Kontaktformular ist aktuell noch nicht an einen Versanddienst oder API-Endpunkt angebunden. Sobald ein Dienst verbunden wird,
+      muessen Art, Zweck, Rechtsgrundlage, Speicherdauer, Empfaenger und Betroffenenrechte in der finalen Datenschutzerklaerung konkret
+      beschrieben werden.
+    </p>
+
+    <h2>Keine Tracking-Skripte</h2>
+    <p>
+      In der aktuellen Umsetzung werden keine externen Tracking-Skripte eingebunden. Falls spaeter Analyse-, Marketing- oder
+      Drittanbieter-Dienste genutzt werden, muessen diese rechtlich bewertet und transparent aufgefuehrt werden.
+    </p>
+  </section>
+</BaseLayout>

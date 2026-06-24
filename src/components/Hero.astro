@@ -1,0 +1,53 @@
+---
+import { projects } from '../data/projects';
+
+const visualLabels: Record<string, { category: string; title: string }> = {
+  'erfolg-buddies': { category: 'Digitalagentur', title: 'Erfolg Buddies' },
+  'deutsche-pflegeentwicklung': { category: 'Pflege / Portal', title: 'DPE' },
+  'schulung-immobilienmakler': { category: 'E-Learning', title: 'Schulung Portal' },
+  passflow: { category: 'Security SaaS', title: 'Passflow' },
+};
+
+const visualProjects = projects.map((project) => ({
+  project,
+  visual: visualLabels[project.slug] ?? { category: project.category, title: project.title },
+}));
+---
+
+<section class="hero section" aria-labelledby="hero-title">
+  <div class="hero__content" data-reveal>
+    <p class="eyebrow">Digital Venture Studio aus Hannover</p>
+    <h1 id="hero-title">Digitale Produkte, Portale und Marken, die Märkte bewegen.</h1>
+    <p class="hero__lead">
+      Novax Digital entwickelt Websites, Plattformen, Schulungsportale, SaaS-Tools und digitale Wachstumssysteme - von der Idee
+      ueber die technische Umsetzung bis zur Vermarktung.
+    </p>
+    <div class="hero__actions" aria-label="Primaere Aktionen">
+      <a class="button button--primary" href="#projekte">Projekte entdecken</a>
+      <a class="button button--ghost" href="/kontakt/">Kontakt aufnehmen</a>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-label="Projekt-Oekosystem Novax Digital" data-reveal>
+    <div class="hero-visual__grid" aria-hidden="true"></div>
+    <div class="orbit orbit--one" aria-hidden="true"></div>
+    <div class="orbit orbit--two" aria-hidden="true"></div>
+    <div class="network-card network-card--core">
+      <span>Core</span>
+      <strong>Novax Digital</strong>
+      <small>Build, launch, scale</small>
+    </div>
+    {visualProjects.map(({ project, visual }, index) => (
+      <a
+        class:list={['network-card', 'network-card--project', `network-card--${project.accent}`, `network-card--pos-${index + 1}`]}
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${project.title} extern ansehen`}
+      >
+        <span>{visual.category}</span>
+        <strong>{visual.title}</strong>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,63 @@
+---
+const navItems = [
+  { label: 'Projekte', href: '/#projekte' },
+  { label: 'Kompetenzen', href: '/#kompetenzen' },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Kontakt', href: '/kontakt/' },
+];
+---
+
+<header class="site-header" data-site-header>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label="Novax Digital Startseite">
+      <img class="brand__logo" src="/assets/logos/novax-digital-logo.png" alt="Novax Digital" width="3000" height="331" />
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="sr-only">Menü öffnen</span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="Hauptnavigation" data-site-nav>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="button button--small button--primary" href="/kontakt/">Projekt anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-site-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const nav = document.querySelector<HTMLElement>('[data-site-nav]');
+
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    nav?.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    nav?.classList.toggle('is-open', !isOpen);
+    document.body.classList.toggle('nav-open', !isOpen);
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  const syncHeader = () => {
+    header?.classList.toggle('is-scrolled', window.scrollY > 16);
+  };
+
+  syncHeader();
+  window.addEventListener('scroll', syncHeader, { passive: true });
+</script>

@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectGrid from '../components/ProjectGrid.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import ValueCard from '../components/ValueCard.astro';
+import { legalData } from '../data/legal';
+
+const pillars = [
+  {
+    title: 'Digitale Produkte',
+    text: 'Wir entwickeln Angebote, die als eigenstaendige Plattform, Portal oder Tool funktionieren und nicht nur als Kampagnenmoment.',
+  },
+  {
+    title: 'Web & App Entwicklung',
+    text: 'Von Corporate Websites bis WebApps: Architektur, Frontend, Schnittstellen und saubere Nutzerfuehrung greifen zusammen.',
+  },
+  {
+    title: 'Online-Marketing',
+    text: 'SEO, Ads, Content und Conversion-Denken werden frueh mitgedacht, damit Reichweite in konkrete Anfragen und Nutzung uebersetzt wird.',
+  },
+  {
+    title: 'Branchenportale',
+    text: 'Wir bauen digitale Zugänge fuer Maerkte mit klaren Regeln, echten Workflows und Zielgruppen, die schnell Vertrauen brauchen.',
+  },
+  {
+    title: 'Automatisierung & Prozesse',
+    text: 'Wiederkehrende Ablaeufe werden schlanker: Formulare, Datenfluesse, interne Tools und Schnittstellen arbeiten als System.',
+  },
+  {
+    title: 'Wachstumssysteme',
+    text: 'Wir verbinden Strategie, Design, Entwicklung und Vermarktung, damit digitale Projekte messbar funktionieren.',
+  },
+];
+
+const values = [
+  {
+    title: 'Schnell denken, sauber bauen',
+    text: 'Kurze Wege und pragmatische Entscheidungen, ohne technische Schulden als Konzept zu verkaufen.',
+  },
+  {
+    title: 'Branchen verstehen',
+    text: 'Wir arbeiten uns in Marktlogik, Zielgruppen und konkrete Prozesse ein, bevor Interfaces und Funnels entstehen.',
+  },
+  {
+    title: 'Digitale Systeme statt Einzelmaßnahmen',
+    text: 'Eine Website, ein Portal oder ein Tool ist bei uns Teil eines groesseren Betriebs- und Wachstumssystems.',
+  },
+  {
+    title: 'Daten, Technik und Kreativität verbinden',
+    text: 'Gute digitale Produkte entstehen dort, wo Analyse, Entwicklung und Markenarbeit in dieselbe Richtung laufen.',
+  },
+  {
+    title: 'Langfristig betreiben und optimieren',
+    text: 'Nach dem Launch beginnt die eigentliche Arbeit: messen, verbessern, skalieren und stabil weiterentwickeln.',
+  },
+];
+---
+
+<BaseLayout
+  title="Novax Digital GmbH"
+  description="Novax Digital entwickelt Websites, Plattformen, Schulungsportale, SaaS-Tools und digitale Wachstumssysteme aus Hannover."
+>
+  <Hero />
+
+  <TrustBadges />
+
+  <section class="section section--tight" id="projekte" aria-labelledby="projects-title">
+    <SectionHeader
+      eyebrow="Projekt-Oekosystem"
+      title="Vier digitale Einheiten. Ein gemeinsames Betriebssystem."
+      text="Novax Digital buendelt eigene Marken, Portale und Tools. Jedes Projekt adressiert einen konkreten Markt - verbunden durch Strategie, Technologie und Wachstumsexpertise."
+    />
+    <ProjectGrid />
+  </section>
+
+  <section class="section section--band" id="kompetenzen" aria-labelledby="competence-title">
+    <SectionHeader
+      eyebrow="Was Novax verbindet"
+      title="Strategie, Design, Entwicklung und Vermarktung aus einem Team."
+      text="Wir bauen digitale Projekte so, dass Produkt, Technologie und Nachfrage zusammenpassen - vom ersten Konzept bis zum laufenden Betrieb."
+    />
+    <div class="pillar-grid">
+      {pillars.map((pillar) => <ValueCard title={pillar.title} text={pillar.text} />)}
+    </div>
+  </section>
+
+  <section class="section split-section split-section--media" aria-labelledby="about-title">
+    <div data-reveal>
+      <p class="eyebrow">Über Novax</p>
+      <h2 id="about-title">Ein junges digitales Team aus Hannover/Niedersachsen.</h2>
+    </div>
+    <div class="split-section__content" data-reveal>
+      <p>
+        Novax Digital betreibt eigene Produkte und entwickelt gleichzeitig digitale Loesungen, die Unternehmen schneller sichtbar,
+        strukturierter und technologisch besser aufstellen.
+      </p>
+      <p>
+        Unser Fokus liegt auf klaren Plattformen, performanten Websites, Marketing-Systemen und Tools, die im Alltag wirklich genutzt
+        werden.
+      </p>
+      <a class="button button--ghost" href="/ueber-uns/">Mehr ueber uns</a>
+      <figure class="team-showcase">
+        <img
+          src="/assets/optimized/team-workspace-1800.jpg"
+          alt="Novax Digital Team bei der Arbeit im Büro"
+          width="1800"
+          height="1199"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="values-title">
+    <SectionHeader
+      eyebrow="Arbeitsweise"
+      title="Wie wir digitale Vorhaben nach vorne bringen."
+      text="Wir arbeiten nah am Markt, technisch solide und mit dem Anspruch, digitale Systeme langfristig besser zu machen."
+    />
+    <div class="value-grid">
+      {values.map((value, index) => <ValueCard title={value.title} text={value.text} index={index} />)}
+    </div>
+  </section>
+
+  <section class="section contact-cta" aria-labelledby="contact-cta-title" data-reveal>
+    <div>
+      <p class="eyebrow">Projekt anfragen</p>
+      <h2 id="contact-cta-title">Du hast ein digitales Projekt, Portal oder Tool im Kopf?</h2>
+      <p>
+        Lass uns klaeren, was entstehen soll, welche Systeme schon vorhanden sind und wie daraus ein belastbares digitales Produkt wird.
+      </p>
+    </div>
+    <div class="contact-cta__actions">
+      <a class="button button--primary" href="/kontakt/">Projekt anfragen</a>
+      <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
+      {legalData.phone && <a href={`tel:${legalData.phone.replaceAll(' ', '')}`}>{legalData.phone}</a>}
+    </div>
+    <figure class="contact-cta__portrait" aria-hidden="true">
+      <img src="/assets/optimized/contact-portrait-1200.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" />
+    </figure>
+  </section>
+</BaseLayout>

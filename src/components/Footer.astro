@@ -1,0 +1,50 @@
+---
+import { projects } from '../data/projects';
+import { legalData } from '../data/legal';
+
+const navItems = [
+  { label: 'Startseite', href: '/' },
+  { label: 'Projekte', href: '/#projekte' },
+  { label: 'Kompetenzen', href: '/#kompetenzen' },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Kontakt', href: '/kontakt/' },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand" href="/" aria-label="Novax Digital Startseite">
+        <img class="brand__logo" src="/assets/logos/novax-digital-logo.png" alt="Novax Digital" width="3000" height="331" />
+      </a>
+      <p>
+        Digitale Unternehmensgruppe fuer Websites, Plattformen, Schulungsportale, SaaS-Tools und Wachstumssysteme.
+      </p>
+      <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
+    </div>
+
+    <nav aria-label="Footer Navigation">
+      <h2>Navigation</h2>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <nav aria-label="Projektlinks">
+      <h2>Projekte</h2>
+      {projects.map((project) => (
+        <a href={project.url} target="_blank" rel="noopener noreferrer">
+          {project.title}
+        </a>
+      ))}
+    </nav>
+
+    <nav aria-label="Rechtliches">
+      <h2>Rechtliches</h2>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
+    <span>&copy; {new Date().getFullYear()} {legalData.company}</span>
+    <span>{legalData.address.street}, {legalData.address.postalCode} {legalData.address.city}</span>
+  </div>
+</footer>

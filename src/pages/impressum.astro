@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { legalData } from '../data/legal';
+---
+
+<BaseLayout
+  title="Impressum"
+  description="Impressum der Novax Digital GmbH mit Angaben nach deutschem Recht."
+>
+  <section class="page-hero section page-hero--compact" aria-labelledby="imprint-title">
+    <div data-reveal>
+      <p class="eyebrow">Rechtliches</p>
+      <h1 id="imprint-title">Impressum</h1>
+      <p>Angaben gemaess rechtlichen Informationspflichten. Die finalen Unternehmensdaten muessen vor Livegang geprueft werden.</p>
+    </div>
+  </section>
+
+  <section class="section legal-content" data-reveal>
+    <h2>Angaben zum Unternehmen</h2>
+    <p>
+      <strong>{legalData.company}</strong><br />
+      {legalData.address.street}<br />
+      {legalData.address.postalCode} {legalData.address.city}
+    </p>
+
+    <h2>Vertreten durch</h2>
+    <p>Geschaeftsfuehrer: {legalData.managingDirectors.join(', ')}</p>
+
+    <h2>Kontakt</h2>
+    <p>
+      {legalData.phone && (
+        <>
+          Telefon: <a href={`tel:${legalData.phone.replaceAll(' ', '')}`}>{legalData.phone}</a><br />
+        </>
+      )}
+      E-Mail: <a href={`mailto:${legalData.email}`}>{legalData.email}</a>
+    </p>
+
+    <h2>Registereintrag</h2>
+    <p>
+      Registergericht: {legalData.registerCourt}<br />
+      Registernummer: {legalData.registerNumber}
+    </p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>Umsatzsteuer-Identifikationsnummer gemaess § 27a Umsatzsteuergesetz: {legalData.vatId}</p>
+
+    <h2>Hinweis zur Datenprüfung</h2>
+    <p>
+      Dieses Impressum basiert auf aktuell vorliegenden Angaben und muss vor Veroeffentlichung juristisch und geschaeftlich final
+      geprueft werden, insbesondere Adresse und zentrale Kontaktadresse. Eine zentrale Telefonnummer ist derzeit nicht hinterlegt.
+    </p>
+  </section>
+</BaseLayout>

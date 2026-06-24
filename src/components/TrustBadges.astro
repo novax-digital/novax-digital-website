@@ -1,0 +1,29 @@
+---
+const badges = [
+  {
+    src: '/assets/siegel/Siegel_v1_Digitalisierung_2026.png',
+    alt: 'Digitalisierung 2026 Siegel',
+  },
+  {
+    src: '/assets/siegel/TOP-Experten_Siegel_2026.png',
+    alt: 'TOP Experten Siegel 2026',
+  },
+  {
+    src: '/assets/siegel/bafa-logo.png',
+    alt: 'BAFA Logo',
+  },
+  {
+    src: '/assets/siegel/Winner_White_Horizontal.svg',
+    alt: 'Winner Badge',
+  },
+];
+---
+
+<section class="trust-strip" aria-label="Siegel und Partner" data-reveal>
+  <p>Siegel &amp; Partner</p>
+  <div class="trust-strip__logos">
+    {badges.map((badge) => (
+      <img src={badge.src} alt={badge.alt} loading="lazy" decoding="async" />
+    ))}
+  </div>
+</section>

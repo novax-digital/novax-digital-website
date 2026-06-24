@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden"
+  description="Die angeforderte Seite wurde nicht gefunden."
+>
+  <section class="page-hero section page-hero--compact" aria-labelledby="not-found-title">
+    <div data-reveal>
+      <p class="eyebrow">404</p>
+      <h1 id="not-found-title">Diese Seite gibt es nicht.</h1>
+      <p>Vielleicht wurde die Adresse geaendert oder der Link ist nicht mehr aktuell.</p>
+      <a class="button button--primary" href="/">Zur Startseite</a>
+    </div>
+  </section>
+</BaseLayout>

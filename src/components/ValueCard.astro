@@ -1,0 +1,15 @@
+---
+type Props = {
+  title: string;
+  text: string;
+  index?: number;
+};
+
+const { title, text, index } = Astro.props;
+---
+
+<article class="value-card" data-reveal>
+  {index !== undefined && <span class="value-card__index">{String(index + 1).padStart(2, '0')}</span>}
+  <h3>{title}</h3>
+  <p>{text}</p>
+</article>
