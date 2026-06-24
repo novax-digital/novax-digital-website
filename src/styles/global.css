@@ -817,8 +817,13 @@ p {
 }
 
 .legal-hero > div {
-  max-width: 760px;
+  max-width: min(100%, 980px);
   margin-inline: auto;
+}
+
+.legal-hero h1 {
+  font-size: clamp(3rem, 5.2vw, 4.5rem);
+  text-wrap: nowrap;
 }
 
 .legal-hero p {
@@ -1129,6 +1134,10 @@ p {
 
   .hero__scroll {
     bottom: 24px;
+  }
+
+  .legal-hero h1 {
+    text-wrap: balance;
   }
 
   .project-brand-grid {
