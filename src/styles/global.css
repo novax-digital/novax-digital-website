@@ -331,6 +331,10 @@ p {
   text-align: center;
 }
 
+.landing-heading--center p {
+  margin-inline: auto;
+}
+
 .section-header--center {
   margin-inline: auto;
   text-align: center;
