@@ -462,8 +462,9 @@ p {
 .project-brand-grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(220px, 276px));
   gap: 22px;
+  justify-content: center;
   padding: 10px 0 36px;
 }
 
@@ -472,28 +473,13 @@ p {
   isolation: isolate;
 }
 
-.projects-showcase::before {
-  position: absolute;
-  top: 220px;
-  left: 50%;
-  z-index: -1;
-  width: 100vw;
-  height: 260px;
-  pointer-events: none;
-  content: "";
-  background:
-    linear-gradient(100deg, rgba(69, 216, 255, 0.28), rgba(38, 67, 98, 0.92) 42%, rgba(18, 26, 39, 0.96)),
-    #152238;
-  border-block: 1px solid rgba(255, 255, 255, 0.12);
-  transform: translateX(-50%) skewY(-2.4deg);
-  transform-origin: center;
-}
-
 .project-logo-card {
   position: relative;
   display: grid;
+  grid-template-rows: auto 1fr;
   min-height: 230px;
   align-items: center;
+  justify-items: center;
   padding: 28px 24px;
   overflow: hidden;
   isolation: isolate;
@@ -541,10 +527,10 @@ p {
 }
 
 .project-logo-card span {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  position: relative;
+  justify-self: center;
   padding: 7px 12px;
+  margin-bottom: 18px;
   color: #f7fbff;
   font-size: 0.72rem;
   font-weight: 820;
@@ -1113,11 +1099,6 @@ p {
   .project-logo-card img {
     max-width: 210px;
     max-height: 104px;
-  }
-
-  .projects-showcase::before {
-    top: 250px;
-    height: 520px;
   }
 
   .impact-wall .landing-heading h2 {
