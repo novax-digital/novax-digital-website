@@ -728,7 +728,7 @@ p {
   gap: clamp(28px, 6vw, 86px);
   align-items: center;
   padding: clamp(32px, 5vw, 64px);
-  margin-bottom: 90px;
+  margin-block: clamp(72px, 8vw, 110px);
   overflow: hidden;
   background:
     radial-gradient(circle at 80% 20%, rgba(69, 216, 255, 0.2), transparent 18rem),
